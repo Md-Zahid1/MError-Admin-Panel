@@ -30,11 +30,11 @@ export const uploadFile = async (file) => {
     }
 
     const S3_BUCKET = "merror-files"; // Replace with your bucket name
-    const REGION = "ap-south-1"; // Replace with your region
+    const REGION = process.env.AWS_REGION; // Replace with your region
 
     AWS.config.update({
-        accessKeyId: "AKIAZQ3DRW2NGA3CMKFG",
-        secretAccessKey: "VyQECAR6TLKePicx4JXWbq3cQK0Wj89y2SXpWYcN",
+        accessKeyId: process.env.AWS_ACCESSKEYID,
+        secretAccessKey: process.env.AWS_SECRETACCESSKEY,
     });
 
     const s3 = new S3({
