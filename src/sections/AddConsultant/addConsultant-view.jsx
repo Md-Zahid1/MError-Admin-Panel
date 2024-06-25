@@ -19,7 +19,7 @@ export default function AddConsultantView() {
                         { label: "Home", value: "/home" },
                         { label: "Consultant", value: "/home/consultant" }
                     ]} />
-{/*             <ConsultantForm param={param} /> */}
+            <ConsultantForm param={param} />
         </Container>
     );
 }
