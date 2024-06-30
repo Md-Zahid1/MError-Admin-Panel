@@ -8,7 +8,7 @@ import TextInput from 'src/components/atom/TextInput';
 import { Grid } from '@mui/material';
 import { categoryDetail, createCategory, updateCategory } from 'src/http';
 import { useState, useEffect } from 'react';
-import { uploadFile } from 'src/utils/imageUpload';
+import { UploadFile } from 'src/utils/uploadFile';
 import Dropzone from '../atom/Dropzone';
 import SelectInput from '../atom/SelectInput';
 
@@ -44,7 +44,7 @@ const CategoryForm = ({ param }) => {
         console.log("vvvvvvvvv", value)
         let fileUrl;
         if (value.bannerFile) {
-            fileUrl = await uploadFile(value.bannerFile);
+            fileUrl = await UploadFile(value.bannerFile);
             delete value.bannerFile
         }
         const pay = { ...value, banner: fileUrl ?? value.banner }

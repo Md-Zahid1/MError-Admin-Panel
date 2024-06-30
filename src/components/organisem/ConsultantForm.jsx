@@ -8,7 +8,7 @@ import TextInput from 'src/components/atom/TextInput';
 import { Box, Grid, Typography } from '@mui/material';
 import { consultantDetail, createConsultant, updateConsultant } from 'src/http';
 import { useState, useEffect } from 'react';
-import { uploadFile } from 'src/utils/imageUpload';
+import { UploadFile } from 'src/utils/uploadFile';
 import SelectInput from '../atom/SelectInput';
 import Dropzone from '../atom/Dropzone';
 import DateInput from '../atom/DateInput';
@@ -140,7 +140,7 @@ const ConsultantForm = ({ param }) => {
 		console.log("vvvvvvvvv", value)
 		let fileUrl;
 		if (value.avatarFile) {
-			fileUrl = await uploadFile(value.avatarFile);
+			fileUrl = await UploadFile(value.avatarFile);
 			delete value.avatarFile
 		}
 		const pay = { ...value, avatar: fileUrl ?? value.avatar }

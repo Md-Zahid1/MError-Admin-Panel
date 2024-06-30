@@ -8,7 +8,7 @@ import TextInput from 'src/components/atom/TextInput';
 import { Grid } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { blogDetail, createBlog, updateBlog, getCategory } from 'src/http';
-import { uploadFile } from 'src/utils/imageUpload';
+import { UploadFile } from 'src/utils/uploadFile';
 import TextEditorQuill from '../atom/TextEditorQuill';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
 import Dropzone from '../atom/Dropzone';
@@ -55,7 +55,7 @@ const BlogForm = ({ param }) => {
         console.log("vvvvvvv", value)
         let fileUrl;
         if (value.bannerFile) {
-            fileUrl = await uploadFile(value.bannerFile);
+            fileUrl = await UploadFile(value.bannerFile);
             delete value.bannerFile
         }
 

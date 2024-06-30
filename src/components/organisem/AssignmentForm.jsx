@@ -8,7 +8,7 @@ import TextInput from 'src/components/atom/TextInput';
 import { Box, Grid, Button, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { getCategory, assignmentDetail, createAssignment, updateAssignment } from 'src/http';
-import { uploadFile } from 'src/utils/imageUpload';
+import { UploadFile } from 'src/utils/uploadFile';
 import SelectInput from '../atom/SelectInput';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
 import Dropzone from '../atom/Dropzone';
@@ -102,7 +102,7 @@ const AssignmentForm = ({ param }) => {
 
         let fileUrl;
         if (value.bannerFile) {
-            fileUrl = await uploadFile(value.bannerFile);
+            fileUrl = await UploadFile(value.bannerFile);
             delete value.bannerFile
         }
 
@@ -111,7 +111,7 @@ const AssignmentForm = ({ param }) => {
             for (const op of value.questions) {
                 const [a, b, c, d] = await Promise.all(
                     Object.values(op.options).map(
-                        (i) => (uploadFile(i.imageFile))
+                        (i) => (UploadFile(i.imageFile))
                     )
                 )
 

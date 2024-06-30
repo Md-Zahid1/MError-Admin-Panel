@@ -24,7 +24,7 @@ export const handleFileChange = (event) => {
     }
 };
 
-export const uploadFile = async (file) => {
+export const UploadFile = async (file) => {
     if (!file) {
         return
     }
