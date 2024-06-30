@@ -48,13 +48,12 @@ export const uploadFile = async (file) => {
         Body: file,
     };
     try {
-        const upload = await s3.upload(params).promise();
-        console.log(upload);
-        return upload?.Location;
+        const upload = await s3.upload(params).promise()
+        console.log(upload)
+        return upload.Location
 
     } catch (error) {
-        console.error(error);
-        alert(`Error uploading file: ${error.message}`);
-        return null
+        console.error(error)
+        alert(`Error uploading file: ${error.message}`)
     }
 };
