@@ -8,10 +8,10 @@ import TextInput from 'src/components/atom/TextInput';
 import { Box, Grid, Button, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { getCategory, assignmentDetail, createAssignment, updateAssignment } from 'src/http';
-import { UploadFile } from 'src/utils/uploadFile';
 import SelectInput from '../atom/SelectInput';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
 import Dropzone from '../atom/Dropzone';
+import { UploadFile } from 'src/utils/uploadFile';
 
 const schemaQ = (basedOn = "Swaip Based") => {
     console.log("baseon", basedOn)

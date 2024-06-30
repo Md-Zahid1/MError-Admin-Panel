@@ -26,7 +26,7 @@ export const handleFileChange = (event) => {
 
 export const UploadFile = async (file) => {
     if (!file) {
-        return
+        return null
     }
 
     const S3_BUCKET = "merror-files"; // Replace with your bucket name
@@ -49,7 +49,7 @@ export const UploadFile = async (file) => {
     };
     try {
         const upload = await s3?.upload(params)?.promise()
-        console.log(upload)
+        console.log("upload", upload)
         return upload?.Location
 
     } catch (error) {

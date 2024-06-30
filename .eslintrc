@@ -71,6 +71,7 @@
     "react/no-danger":0,
     "no-restricted-syntax":0,
     "no-shadow":0,
+    "import/order":0,
     "react/jsx-no-useless-fragment": [
       1,
       {
