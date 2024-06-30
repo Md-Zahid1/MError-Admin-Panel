@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import FormPageTitle from 'src/components/organisem/FormPageTitle';
-import ConsultantForm from 'src/components/organisem/consultantForm';
+import ConsultantForm from 'src/components/organisem/ConsultantForm';
 
 // ----------------------------------------------------------------------
 
