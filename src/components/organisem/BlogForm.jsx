@@ -52,7 +52,7 @@ const BlogForm = ({ param }) => {
     }, [])
 
     const submitHandler = async (value) => {
-        console.log("vvvvvvvvv", value)
+        console.log("vvvvvvv", value)
         let fileUrl;
         if (value.bannerFile) {
             fileUrl = await uploadFile(value.bannerFile);

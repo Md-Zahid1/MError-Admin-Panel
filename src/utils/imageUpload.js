@@ -16,8 +16,8 @@ const allowedTypes = [
 
 export const handleFileChange = (event) => {
     console.log("ev", event)
-    const selectedFile = event.target.files[0];
-    if (allowedTypes.includes(selectedFile.type)) {
+    const selectedFile = event?.target?.files[0];
+    if (allowedTypes?.includes(selectedFile?.type)) {
         console.log("message")
     } else {
         alert('Invalid file type. Only images and PDFs are allowed.');
@@ -30,11 +30,11 @@ export const uploadFile = async (file) => {
     }
 
     const S3_BUCKET = "merror-files"; // Replace with your bucket name
-    const REGION = process.env.AWS_REGION; // Replace with your region
+    const REGION = process?.env?.AWS_REGION; // Replace with your region
 
-    AWS.config.update({
-        accessKeyId: process.env.AWS_ACCESSKEYID,
-        secretAccessKey: process.env.AWS_SECRETACCESSKEY,
+    AWS?.config?.update({
+        accessKeyId: process?.env?.AWS_ACCESSKEYID,
+        secretAccessKey: process?.env?.AWS_SECRETACCESSKEY,
     });
 
     const s3 = new S3({
@@ -44,13 +44,13 @@ export const uploadFile = async (file) => {
 
     const params = {
         Bucket: S3_BUCKET,
-        Key: file.name,
+        Key: file?.name,
         Body: file,
     };
     try {
-        const upload = await s3.upload(params).promise()
+        const upload = await s3?.upload(params)?.promise()
         console.log(upload)
-        return upload.Location
+        return upload?.Location
 
     } catch (error) {
         console.error(error)
