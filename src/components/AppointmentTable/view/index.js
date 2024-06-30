@@ -1,1 +1,1 @@
-export { default as BlogTableView } from './blogTableData-view';
+export { default as AppointmentTableDataView } from './appointmentTableData-view';

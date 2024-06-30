@@ -89,6 +89,12 @@
         "args": "none"
       }
     ],
+    "no-unused-expressions": [
+      1,
+      {
+        "allowTernary": true
+      }
+    ],
     "react/jsx-no-duplicate-props": [
       1,
       {

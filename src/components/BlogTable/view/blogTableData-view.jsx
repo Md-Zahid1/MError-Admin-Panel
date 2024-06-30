@@ -15,17 +15,17 @@ import { users } from 'src/_mock/user';
 // import Iconify from 'src/components/iconify';
 import Scrollbar from 'src/components/scrollbar';
 
-import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import DeleteDialogeBox from 'src/components/DialogeBox/DeleteDialogeBox';
-import { userDetail, getConsultant, deleteConsultant } from 'src/http';
+import { userDetail } from 'src/http';
 import { Box } from '@mui/material';
-import { usePathname } from 'src/routes/hooks';
+// import { usePathname } from 'src/routes/hooks';
 import TableNoData from '../table-no-data';
 import UserTableRow from '../user-table-row';
 import UserTableHead from '../user-table-head';
 import TableEmptyRows from '../table-empty-rows';
-import UserTableToolbar from '../user-table-toolbar';
-import { emptyRows, applyFilter, getComparator } from '../utils';
+// import UserTableToolbar from '../user-table-toolbar';
+// import { applyFilter, getComparator } from '../utils';
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ export default function BlogTableData() {
   const [userData, setUserData] = useState({})
   console.log("userData", userData)
   console.log("wwww", userData?.savedBlog?.length)
-  const [id, setId] = useState()
+  // const [id, setId] = useState()
   const [page, setPages] = useState(qpage ?? 1);
 
   const [open, setOpen] = useState(false)
@@ -49,12 +49,12 @@ export default function BlogTableData() {
 
   const [orderBy, setOrderBy] = useState('name');
 
-  const [filterName, setFilterName] = useState('');
+  // const [filterName, setFilterName] = useState('');
 
   const [rowsPerPage, setRowsPerPage] = useState(limit ?? 10);
 
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const handleSort = (event, id) => {
     const isAsc = orderBy === id && order === 'asc';
@@ -91,36 +91,36 @@ export default function BlogTableData() {
     setSelected(newSelected);
   };
 
-  const handleChangePage = (event, newPage) => {
-    setPages(newPage + 1);
-  };
+  // const handleChangePage = (event, newPage) => {
+  //   setPages(newPage + 1);
+  // };
 
-  const handleChangeRowsPerPage = (event) => {
-    setPages(1);
-    setRowsPerPage(parseInt(event.target.value, 10));
-  };
+  // const handleChangeRowsPerPage = (event) => {
+  //   setPages(1);
+  //   setRowsPerPage(parseInt(event.target.value, 10));
+  // };
 
-  const handleFilterByName = (event) => {
-    setPages(1);
-    setSearchParam({ search: event.target.value })
-    setFilterName(event.target.value);
-  };
+  // const handleFilterByName = (event) => {
+  //   setPages(1);
+  //   setSearchParam({ search: event.target.value })
+  //   setFilterName(event.target.value);
+  // };
 
-  const dataFiltered = applyFilter({
-    inputData: users,
-    comparator: getComparator(order, orderBy),
-    filterName,
-  });
+  // const dataFiltered = applyFilter({
+  //   inputData: users,
+  //   comparator: getComparator(order, orderBy),
+  //   filterName,
+  // });
 
-  const notFound = !dataFiltered.length && !!filterName;
+  // const notFound = !dataFiltered.length && !!filterName;
 
-  const addConsultant = () => {
-    navigate('/add-consultant')
-  }
+  // const addConsultant = () => {
+  //   navigate('/add-consultant')
+  // }
 
   const deleteClickHandler = (deleteId) => {
     console.log("deleteId", deleteId)
-    setId(deleteId)
+    // setId(deleteId)
     setOpen(true)
   }
 
@@ -189,7 +189,7 @@ export default function BlogTableData() {
                         category={row.category}
                         handleClick={(event) => handleClick(event, row.name)}
                         deleteClickHandler={deleteClickHandler}
-                        // id={row._id}
+                      // id={row._id}
                       />
                     ))
                     : <TableNoData query={search} />

@@ -25,7 +25,7 @@ import UserTableRow from '../user-table-row';
 import UserTableHead from '../user-table-head';
 import TableEmptyRows from '../table-empty-rows';
 import UserTableToolbar from '../user-table-toolbar';
-import { applyFilter, getComparator } from '../utils';
+// import { applyFilter, getComparator } from '../utils';
 
 // ----------------------------------------------------------------------
 
@@ -104,11 +104,11 @@ export default function ExpertTableData() {
     setFilterName(event.target.value);
   };
 
-  const dataFiltered = applyFilter({
-    inputData: users,
-    comparator: getComparator(order, orderBy),
-    filterName,
-  });
+  // const dataFiltered = applyFilter({
+  //   inputData: users,
+  //   comparator: getComparator(order, orderBy),
+  //   filterName,
+  // });
 
   // const notFound = !dataFiltered.length && !!filterName;
 

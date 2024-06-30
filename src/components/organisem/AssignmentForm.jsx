@@ -491,7 +491,7 @@ const QuestionFormChild = ({ index, basedOn, onRemove }) => {
                             // }} sx={{ width: 100 }} label="Option A" />
                             //     : null
 
-                            : values.type == "image" ? <Button
+                            : values.type === "image" ? <Button
                                 variant="contained"
                                 component="label"
                                 sx={{
@@ -507,7 +507,7 @@ const QuestionFormChild = ({ index, basedOn, onRemove }) => {
                                     onChange={(e) => {
                                         setFieldValue(`options.c.imageFile`, e.target.files[0])
                                         setFieldValue(`options.c.image`, URL.createObjectURL(e.target.files[0]))
-                                    }} sx={{ width: 100 }} label="Option A"
+                                    }} label="Option A"
                                 />
                                 {values?.options?.c?.image ? <img src={values?.options?.c?.image} alt='banner' height={50} width={80} /> : ""}
                             </Button>

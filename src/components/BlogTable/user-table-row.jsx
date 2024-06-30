@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Stack from '@mui/material/Stack';
@@ -9,12 +9,12 @@ import TableRow from '@mui/material/TableRow';
 // import MenuItem from '@mui/material/MenuItem';
 import TableCell from '@mui/material/TableCell';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 
-import Label from 'src/components/label';
-import Iconify from 'src/components/iconify';
+// import Label from 'src/components/label';
+// import Iconify from 'src/components/iconify';
 
-import { RouterLink } from 'src/routes/components';
+// import { RouterLink } from 'src/routes/components';
 
 // ----------------------------------------------------------------------
 
@@ -38,15 +38,15 @@ export default function UserTableRow({
   deleteClickHandler,
   id
 }) {
-  const [open, setOpen] = useState(null);
+  // const [open, setOpen] = useState(null);
 
-  const handleOpenMenu = (event) => {
-    setOpen(event.currentTarget);
-  };
+  // const handleOpenMenu = (event) => {
+  //   setOpen(event.currentTarget);
+  // };
 
-  const handleCloseMenu = () => {
-    setOpen(null);
-  };
+  // const handleCloseMenu = () => {
+  //   setOpen(null);
+  // };
 
   return (
     <>
@@ -125,12 +125,12 @@ export default function UserTableRow({
 }
 
 UserTableRow.propTypes = {
-  avatarUrl: PropTypes.any,
-  company: PropTypes.any,
+  // avatarUrl: PropTypes.any,
+  // company: PropTypes.any,
   handleClick: PropTypes.func,
-  isVerified: PropTypes.any,
-  name: PropTypes.any,
-  role: PropTypes.any,
-  selected: PropTypes.any,
+  // isVerified: PropTypes.any,
+  // name: PropTypes.any,
+  // role: PropTypes.any,
+  // selected: PropTypes.any,
   // status: PropTypes.string,
 };

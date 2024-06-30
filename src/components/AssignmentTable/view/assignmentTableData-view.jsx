@@ -1,31 +1,31 @@
 import { useState, useEffect } from 'react';
 
 import Card from '@mui/material/Card';
-import Stack from '@mui/material/Stack';
+// import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
+// import Button from '@mui/material/Button';
+// import Container from '@mui/material/Container';
 import TableBody from '@mui/material/TableBody';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
 
 import { users } from 'src/_mock/user';
 
-import Iconify from 'src/components/iconify';
+// import Iconify from 'src/components/iconify';
 import Scrollbar from 'src/components/scrollbar';
 
-import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import DeleteDialogeBox from 'src/components/DialogeBox/DeleteDialogeBox';
-import { getBlog, getReview, getResult, getConsultant, getAssignment, deleteConsultant } from 'src/http';
+import { getResult } from 'src/http';
 import { Box } from '@mui/material';
-import { usePathname } from 'src/routes/hooks';
+// import { usePathname } from 'src/routes/hooks';
 import TableNoData from '../table-no-data';
 import UserTableRow from '../user-table-row';
 import UserTableHead from '../user-table-head';
 import TableEmptyRows from '../table-empty-rows';
-import UserTableToolbar from '../user-table-toolbar';
-import { emptyRows, applyFilter, getComparator } from '../utils';
+// import UserTableToolbar from '../user-table-toolbar';
+// import { applyFilter, getComparator } from '../utils';
 
 // ----------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ export default function AssignmentTableData() {
   const search = searchParam.get("search")
   const limit = searchParam.get("limit")
   const [assignmentData, setAssignmentData] = useState([])
-  const [id, setId] = useState()
+  // const [id, setId] = useState()
   const [page, setPages] = useState(qpage ?? 1);
 
   const [open, setOpen] = useState(false)
@@ -47,18 +47,18 @@ export default function AssignmentTableData() {
 
   const [orderBy, setOrderBy] = useState('name');
 
-  const [filterName, setFilterName] = useState('');
+  // const [filterName, setFilterName] = useState('');
 
   const [rowsPerPage, setRowsPerPage] = useState(limit ?? 10);
 
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const handleSort = (event, id) => {
-    const isAsc = orderBy === id && order === 'asc';
-    if (id !== '') {
+  const handleSort = (event, sortId) => {
+    const isAsc = orderBy === sortId && order === 'asc';
+    if (sortId !== '') {
       setOrder(isAsc ? 'desc' : 'asc');
-      setOrderBy(id);
+      setOrderBy(sortId);
     }
   };
 
@@ -98,27 +98,27 @@ export default function AssignmentTableData() {
     setRowsPerPage(parseInt(event.target.value, 10));
   };
 
-  const handleFilterByName = (event) => {
-    setPages(1);
-    setSearchParam({ search: event.target.value })
-    setFilterName(event.target.value);
-  };
+  // const handleFilterByName = (event) => {
+  //   setPages(1);
+  //   setSearchParam({ search: event.target.value })
+  //   setFilterName(event.target.value);
+  // };
 
-  const dataFiltered = applyFilter({
-    inputData: users,
-    comparator: getComparator(order, orderBy),
-    filterName,
-  });
+  // const dataFiltered = applyFilter({
+  //   inputData: users,
+  //   comparator: getComparator(order, orderBy),
+  //   filterName,
+  // });
 
-  const notFound = !dataFiltered.length && !!filterName;
+  // const notFound = !dataFiltered.length && !!filterName;
 
-  const addConsultant = () => {
-    navigate('/add-consultant')
-  }
+  // const addConsultant = () => {
+  //   navigate('/add-consultant')
+  // }
 
   const deleteClickHandler = (deleteId) => {
     console.log("deleteId", deleteId)
-    setId(deleteId)
+    // setId(deleteId)
     setOpen(true)
   }
 
