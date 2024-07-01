@@ -31,7 +31,7 @@
     "@mui/x-data-grid": "^7.6.2",
     "@mui/x-date-pickers": "^6.20.0",
     "apexcharts": "^3.43.0",
-    "aws-sdk": "^2.341.0",
+    "aws-sdk": "^2.1651.0",
     "axios": "^1.7.2",
     "date-fns": "^2.30.0",
     "dotenv": "^16.4.5",
