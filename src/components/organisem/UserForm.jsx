@@ -8,7 +8,7 @@ import TextInput from 'src/components/atom/TextInput';
 import { Grid } from '@mui/material';
 import SelectInput from '../atom/SelectInput';
 import Dropzone from '../atom/Dropzone';
-import { imageUpload } from 'src/utils/uploadFile';
+import { imageUpload } from '../../utils/imageUpload';
 
 
 const schema = Yup.object().shape({

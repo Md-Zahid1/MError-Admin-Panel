@@ -13,7 +13,7 @@ import Dropzone from '../atom/Dropzone';
 import DateInput from '../atom/DateInput';
 import TimeInput from '../atom/TimeInput';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
-import { imageUpload } from 'src/utils/uploadFile';
+import { imageUpload } from '../../utils/imageUpload';
 
 
 const schema = Yup.object().shape({
