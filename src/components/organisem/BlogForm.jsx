@@ -11,7 +11,7 @@ import { blogDetail, createBlog, updateBlog, getCategory } from 'src/http';
 import TextEditorQuill from '../atom/TextEditorQuill';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
 import Dropzone from '../atom/Dropzone';
-import { UploadFile } from '../../utils/uploadFile';
+import { imageUpload } from 'src/utils/uploadFile';
 
 
 
@@ -55,7 +55,7 @@ const BlogForm = ({ param }) => {
         console.log("vvvvvvv", value)
         let fileUrl;
         if (value.bannerFile) {
-            fileUrl = await UploadFile(value.bannerFile);
+            fileUrl = await imageUpload(value.bannerFile);
             delete value.bannerFile
         }
 

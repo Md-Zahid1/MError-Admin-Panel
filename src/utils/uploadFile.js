@@ -26,36 +26,40 @@ const allowedTypes = [
 
 
 
-export const UploadFile = async (file) => {
-    if (!file) {
-        return null
-    }
-
-    const S3_BUCKET = "merror-files"; // Replace with your bucket name
-    const REGION = process?.env?.AWS_REGION; // Replace with your region
-
-    AWS?.config?.update({
-        accessKeyId: process?.env?.AWS_ACCESSKEYID,
-        secretAccessKey: process?.env?.AWS_SECRETACCESSKEY,
-    });
-
-    const s3 = new S3({
-        params: { Bucket: S3_BUCKET },
-        region: REGION,
-    });
-
-    const params = {
-        Bucket: S3_BUCKET,
-        Key: file?.name,
-        Body: file,
-    };
+export const imageUpload = async (file) => {
     try {
-        const upload = await s3?.upload(params)?.promise()
-        console.log("upload", upload)
-        return upload?.Location
+        if (!file) {
+            return null
+        }
 
-    } catch (error) {
-        console.error(error)
-        alert(`Error uploading file: ${error.message}`)
+        const S3_BUCKET = "merror-files"; // Replace with your bucket name
+        const REGION = process?.env?.AWS_REGION; // Replace with your region
+
+        AWS?.config?.update({
+            accessKeyId: process?.env?.AWS_ACCESSKEYID,
+            secretAccessKey: process?.env?.AWS_SECRETACCESSKEY,
+        });
+
+        const s3 = new S3({
+            params: { Bucket: S3_BUCKET },
+            region: REGION,
+        });
+
+        const params = {
+            Bucket: S3_BUCKET,
+            Key: file?.name,
+            Body: file,
+        };
+        try {
+            const upload = await s3?.upload(params)?.promise()
+            console.log("upload", upload)
+            return upload?.Location
+
+        } catch (error) {
+            console.error(error)
+            alert(`Error uploading file: ${error.message}`)
+        }
+    } catch (err) {
+        console.log("err", err)
     }
 };

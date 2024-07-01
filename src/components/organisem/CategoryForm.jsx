@@ -10,7 +10,7 @@ import { categoryDetail, createCategory, updateCategory } from 'src/http';
 import { useState, useEffect } from 'react';
 import Dropzone from '../atom/Dropzone';
 import SelectInput from '../atom/SelectInput';
-import { UploadFile } from '../../utils/uploadFile';
+import { imageUpload } from 'src/utils/uploadFile';
 
 
 const schema = Yup.object().shape({
@@ -44,7 +44,7 @@ const CategoryForm = ({ param }) => {
         console.log("vvvvvvvvv", value)
         let fileUrl;
         if (value.bannerFile) {
-            fileUrl = await UploadFile(value.bannerFile);
+            fileUrl = await imageUpload(value.bannerFile);
             delete value.bannerFile
         }
         const pay = { ...value, banner: fileUrl ?? value.banner }

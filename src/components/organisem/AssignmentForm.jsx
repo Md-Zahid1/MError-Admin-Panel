@@ -11,7 +11,7 @@ import { getCategory, assignmentDetail, createAssignment, updateAssignment } fro
 import SelectInput from '../atom/SelectInput';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
 import Dropzone from '../atom/Dropzone';
-import { UploadFile } from '../../utils/uploadFile';
+import { imageUpload } from 'src/utils/uploadFile';
 
 const schemaQ = (basedOn = "Swaip Based") => {
     console.log("baseon", basedOn)
@@ -102,7 +102,7 @@ const AssignmentForm = ({ param }) => {
 
         let fileUrl;
         if (value.bannerFile) {
-            fileUrl = await UploadFile(value.bannerFile);
+            fileUrl = await imageUpload(value.bannerFile);
             delete value.bannerFile
         }
 
@@ -111,7 +111,7 @@ const AssignmentForm = ({ param }) => {
             for (const op of value.questions) {
                 const [a, b, c, d] = await Promise.all(
                     Object.values(op.options).map(
-                        (i) => (UploadFile(i.imageFile))
+                        (i) => (imageUpload(i.imageFile))
                     )
                 )
 

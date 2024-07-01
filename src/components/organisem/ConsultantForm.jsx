@@ -13,7 +13,7 @@ import Dropzone from '../atom/Dropzone';
 import DateInput from '../atom/DateInput';
 import TimeInput from '../atom/TimeInput';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
-import { UploadFile } from '../../utils/uploadFile';
+import { imageUpload } from 'src/utils/uploadFile';
 
 
 const schema = Yup.object().shape({
@@ -140,7 +140,7 @@ const ConsultantForm = ({ param }) => {
 		console.log("vvvvvvvvv", value)
 		let fileUrl;
 		if (value.avatarFile) {
-			fileUrl = await UploadFile(value.avatarFile);
+			fileUrl = await imageUpload(value.avatarFile);
 			delete value.avatarFile
 		}
 		const pay = { ...value, avatar: fileUrl ?? value.avatar }

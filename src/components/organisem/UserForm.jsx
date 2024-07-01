@@ -8,7 +8,7 @@ import TextInput from 'src/components/atom/TextInput';
 import { Grid } from '@mui/material';
 import SelectInput from '../atom/SelectInput';
 import Dropzone from '../atom/Dropzone';
-import { UploadFile } from '../../utils/uploadFile';
+import { imageUpload } from 'src/utils/uploadFile';
 
 
 const schema = Yup.object().shape({
@@ -42,10 +42,10 @@ const UserForm = ({ param }) => {
         console.log("vvvvvvvvv", value)
         let fileUrl;
         if (value.avatarFile) {
-            fileUrl = await UploadFile(value.avatarFile);
+            fileUrl = await imageUpload(value.avatarFile);
             delete value.avatarFile
         }
-    const pay = { ...value, avatar: fileUrl ?? value.avatar }
+        const pay = { ...value, avatar: fileUrl ?? value.avatar }
     }
 
 
