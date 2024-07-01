@@ -10,7 +10,7 @@ import { categoryDetail, createCategory, updateCategory } from 'src/http';
 import { useState, useEffect } from 'react';
 import Dropzone from '../atom/Dropzone';
 import SelectInput from '../atom/SelectInput';
-import UploadFile from '../../utils/uploadFile';
+import { UploadFile } from '../../utils/uploadFile';
 
 
 const schema = Yup.object().shape({

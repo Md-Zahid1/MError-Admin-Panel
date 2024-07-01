@@ -1,4 +1,3 @@
-import React from 'react'
 import AWS from 'aws-sdk';
 import S3 from 'aws-sdk/clients/s3';
 
@@ -27,7 +26,7 @@ const allowedTypes = [
 
 
 
- const UploadFile = async (file) => {
+export const UploadFile = async (file) => {
     if (!file) {
         return null
     }
@@ -60,5 +59,3 @@ const allowedTypes = [
         alert(`Error uploading file: ${error.message}`)
     }
 };
-
-export default UploadFile

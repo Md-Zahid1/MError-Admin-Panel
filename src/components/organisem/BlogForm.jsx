@@ -11,7 +11,7 @@ import { blogDetail, createBlog, updateBlog, getCategory } from 'src/http';
 import TextEditorQuill from '../atom/TextEditorQuill';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
 import Dropzone from '../atom/Dropzone';
-import UploadFile from '../../utils/uploadFile';
+import { UploadFile } from '../../utils/uploadFile';
 
 
 
