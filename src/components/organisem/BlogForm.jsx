@@ -8,10 +8,10 @@ import TextInput from 'src/components/atom/TextInput';
 import { Grid } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { blogDetail, createBlog, updateBlog, getCategory } from 'src/http';
-import { UploadFile } from 'src/utils/uploadFile';
 import TextEditorQuill from '../atom/TextEditorQuill';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
 import Dropzone from '../atom/Dropzone';
+import UploadFile from '../../utils/uploadFile';
 
 
 

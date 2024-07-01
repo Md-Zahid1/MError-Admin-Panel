@@ -11,7 +11,7 @@ import { getCategory, assignmentDetail, createAssignment, updateAssignment } fro
 import SelectInput from '../atom/SelectInput';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
 import Dropzone from '../atom/Dropzone';
-import { UploadFile } from 'src/utils/uploadFile';
+import UploadFile from '../../utils/uploadFile';
 
 const schemaQ = (basedOn = "Swaip Based") => {
     console.log("baseon", basedOn)

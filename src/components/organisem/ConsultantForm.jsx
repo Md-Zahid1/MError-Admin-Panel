@@ -8,12 +8,12 @@ import TextInput from 'src/components/atom/TextInput';
 import { Box, Grid, Typography } from '@mui/material';
 import { consultantDetail, createConsultant, updateConsultant } from 'src/http';
 import { useState, useEffect } from 'react';
-import { UploadFile } from 'src/utils/uploadFile';
 import SelectInput from '../atom/SelectInput';
 import Dropzone from '../atom/Dropzone';
 import DateInput from '../atom/DateInput';
 import TimeInput from '../atom/TimeInput';
 import MultipleSelectInput from '../atom/MultipleSelectInput';
+import UploadFile from '../../utils/uploadFile';
 
 
 const schema = Yup.object().shape({

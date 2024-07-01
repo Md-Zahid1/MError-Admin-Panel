@@ -1,3 +1,4 @@
+import React from 'react'
 import AWS from 'aws-sdk';
 import S3 from 'aws-sdk/clients/s3';
 
@@ -14,17 +15,19 @@ const allowedTypes = [
 ];
 
 
-export const handleFileChange = (event) => {
-    console.log("ev", event)
-    const selectedFile = event?.target?.files[0];
-    if (allowedTypes?.includes(selectedFile?.type)) {
-        console.log("message")
-    } else {
-        alert('Invalid file type. Only images and PDFs are allowed.');
-    }
-};
+// export const handleFileChange = (event) => {
+//     console.log("ev", event)
+//     const selectedFile = event?.target?.files[0];
+//     if (allowedTypes?.includes(selectedFile?.type)) {
+//         console.log("message")
+//     } else {
+//         alert('Invalid file type. Only images and PDFs are allowed.');
+//     }
+// };
 
-export const UploadFile = async (file) => {
+
+
+ const UploadFile = async (file) => {
     if (!file) {
         return null
     }
@@ -57,3 +60,5 @@ export const UploadFile = async (file) => {
         alert(`Error uploading file: ${error.message}`)
     }
 };
+
+export default UploadFile
