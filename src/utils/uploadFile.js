@@ -48,7 +48,7 @@ export const UploadFile = async (file) => {
         Body: file,
     };
     try {
-        const upload = await s3?.upload(params)?.promise()
+        const upload = await s3?.upload(params)?.promise()?.then((up) => up)
         console.log("upload", upload)
         return upload?.Location
 

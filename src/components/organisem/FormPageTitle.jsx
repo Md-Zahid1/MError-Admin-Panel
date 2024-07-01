@@ -15,8 +15,8 @@ const FormPageTitle = ({ title, links = [{ label: "home", value: "/home" }], }) 
                 <Typography variant="h4">{title}</Typography>
                 <Breadcrumbs maxItems={2} aria-label="breadcrumb">
                     {
-                        links.map((lnk) => (
-                            <Link underline="hover" color="inherit" href={lnk.value}>
+                        links.map((lnk, index) => (
+                            <Link underline="hover" color="inherit" href={lnk.value} key={index}>
                                 <Typography color="text.primary">{lnk.label}</Typography>
                             </Link>
                         ))

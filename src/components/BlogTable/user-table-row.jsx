@@ -69,7 +69,7 @@ export default function UserTableRow({
         <TableCell>{title}</TableCell>
         <TableCell>{description}</TableCell>
 
-        <TableCell>{category.map((cat) => (cat.title))}</TableCell>
+        <TableCell>{category?.map((cat) => (cat?.title))}</TableCell>
 
         {/* <TableCell align="center">{isVerified ? 'Yes' : 'No'}</TableCell> */}
 
